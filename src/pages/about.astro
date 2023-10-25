@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Eric Hoose" description="About Eric Hoose">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/gatsby.jpg"
+					alt="Eric Hoose's dog Gatsby doing what he does best: laying down"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Hello there! Welcome to my corner of the digital realm! I'm Eric Hoose, a seasoned web developer with over a decade of hands-on experience. I've had the privilege of witnessing the ever-evolving landscape of web development, and it's been quite the exhilarating ride.
+					</p>
+					<h5>Leading with Technology</h5>
+					<p>
+						As a tech lead, I've had the privilege of guiding and mentoring teams of developers, fostering a culture of innovation and excellence. I believe that leadership is not just about overseeing projects but also empowering others to excel in their roles.
+					</p>
+					<h5>Consulting for Success</h5>
+					<p>
+						My journey has also led me to the world of consulting, where I've had the opportunity to collaborate with diverse clients and industries. Whether it's untangling complex technical challenges or providing strategic insights, I'm here to ensure that your web development endeavors thrive.
+					</p>
+					<h5>Building Tomorrow's Digital World</h5>
+					<p>
+						Web development isn't just my profession; it's my passion.
+						I'm dedicated to staying at the forefront of the industry, adapting to the latest trends and technologies that will shape the digital world of tomorrow.
+					</p>
+					<h5>Let's Create Together</h5>
+					<p>
+						If you're seeking a seasoned web developer who can transform your digital vision into reality,
+						or a consultant to help navigate the complexities of the tech world, you've come to the right place.
+						Let's embark on this exciting journey together and make the web a better place, one line of code at a time.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>TypeScript/JavaScript, React, Angular, Nextjs, Node, HTML, CSS, HTMX, Django, Go, agile, accessability, web performance </p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
